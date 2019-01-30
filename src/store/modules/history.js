@@ -27,7 +27,7 @@ const mutations = {
 // actions
 
 const actions = {
-  saveToHistory ({state, commit, rootState}, obj) {
+  saveToHistory ({ commit }, obj) {
     commit('saveToHistory', obj)
   },
   setTempUnits ({commit}, newUnits) {

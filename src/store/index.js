@@ -39,7 +39,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    showAnswer ({state, commit}, isRightAnswer) {
+    showAnswer ({ commit }, isRightAnswer) {
       if (isRightAnswer) {
         commit('setResult', true)
         commit('changeScore')

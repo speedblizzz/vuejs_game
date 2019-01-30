@@ -8,7 +8,7 @@
     </a>
   </li>
 </ul>
-<button @click="getCities({resetResult:true})" v-if="isCityChoosed || isWrongData" class="next-city_btn">Next cities</button>
+<button @click="getCities({resetResult:true})" v-if="isCityChoosed" class="next-city_btn">Next cities</button>
 </div>
 
 </template>
@@ -19,7 +19,6 @@ export default {
   computed: mapState({
     cities: state => state.cities.currentCities,
     isCityChoosed: state => state.cities.isCityChoosed,
-    isWrongData: state => state.cities.isWrongData,
     units: state => state.units.currentUnits.text
   }),
   methods: {

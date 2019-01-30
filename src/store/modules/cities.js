@@ -6,7 +6,6 @@ import handlers from '../handlers'
 const state = {
   currentCities: [],
   allCities: [],
-  currentCoords: [],
   isCityChoosed: false,
   isWrongData: null,
   rightTemp: null,
@@ -46,7 +45,7 @@ const mutations = {
 // actions
 
 const actions = {
-  getAllCities ({state, dispatch, commit, rootState}) {
+  getAllCities ({state, dispatch, commit}) {
     return new Promise(resolve => {
       let cities = []
       let apiUrl = `http://api.openweathermap.org/data/2.5/box/city?bbox=${state.longitudeFrom},${state.latitudeFrom},${state.longitudeTo},${state.latitudeTo},10&appid=7eefaf7562fed87fbbefa9d5afcec80b&lang=ru&units=metric`
@@ -57,7 +56,7 @@ const actions = {
       })
     })
   },
-  getCities ({ state, dispatch, commit, rootState }, params) {
+  getCities ({ state, commit }, params) {
     let cities = []
     let goodTemp = null
     for (let i = 0; i < 2; i++) {
@@ -73,7 +72,7 @@ const actions = {
       commit('changeChoiceStatus', false)
     }
   },
-  checkTemperature ({dispatch, state, commit, rootState}, temp) {
+  checkTemperature ({dispatch, state, commit}, temp) {
     if (state.isCityChoosed) {
       return
     }

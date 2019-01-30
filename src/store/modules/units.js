@@ -22,7 +22,7 @@ const mutations = {
 // actions
 
 const actions = {
-  initiateUnitsSettings ({state, dispatch, commit, getters, rootState}, event) {
+  initiateUnitsSettings ({dispatch, commit}, event) {
     let newUnits = {
       type: event.target.value,
       text: event.target.value === 'metric' ? 'C' : 'F'
