@@ -3,20 +3,20 @@
       <router-link to="/">Back</router-link>
       <h1>{{title}}</h1>
       <div>
-        <Units/>
-        <History/>
+        <SettingsCheckboxUnits/>
+        <SettingsHistoryList/>
       </div>
     </div>
 </template>
 <script>
-import Units from './Units.vue'
-import History from './History.vue'
+import SettingsCheckboxUnits from './SettingsCheckboxUnits.vue'
+import SettingsHistoryList from './SettingsHistoryList.vue'
 
 export default {
   name: 'Settings',
   components: {
-    Units,
-    History
+    SettingsCheckboxUnits,
+    SettingsHistoryList
   },
   computed: {
     title () {

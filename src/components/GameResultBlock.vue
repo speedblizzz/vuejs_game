@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'Result',
+  name: 'GameResultBlock',
   computed: {
     score () {
       return this.$store.state.score
@@ -22,7 +22,7 @@ export default {
   methods: {}
 }
 </script>
-<style>
+<style scoped>
 .result_block {
   display: flex;
   flex-flow: column nowrap;

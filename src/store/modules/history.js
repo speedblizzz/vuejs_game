@@ -18,7 +18,7 @@ const mutations = {
   setTempByUnits (state, newUnits) {
     state.historyList.forEach(historyItem => {
       historyItem.cities.forEach(city => {
-        city.main.temp = handlers.getTempByUnits(city.main.temp, newUnits.type)
+        city.temp = handlers.getTempByUnits(city.temp, newUnits.type)
       })
     })
   }

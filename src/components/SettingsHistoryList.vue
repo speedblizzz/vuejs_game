@@ -5,7 +5,7 @@
         <li :key="item.id" v-for="item in historyList" class="history_item">
             <div :key="city.id" v-for="city in item.cities" class="history_city">
               <span class="history_city-name">{{city.name}}</span>
-              <span>{{city.main.temp}} {{units.text}}</span>
+              <span>{{city.temp}} {{units.text}}</span>
             </div>
             <span class="history-result" :class="{lose: !item.result, won: item.result}">{{item.result ? 'WON' : 'LOSE'}}</span>
         </li>
@@ -15,14 +15,14 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  name: 'History',
+  name: 'SettingsHistoryList',
   computed: mapState({
     historyList: state => state.history.historyList,
     units: state => state.units.currentUnits
   })
 }
 </script>
-<style>
+<style scoped>
 .history-list {
   text-align: center;
 }
@@ -47,5 +47,11 @@ export default {
 }
 .history_city-name {
   margin-bottom: 10px;
+}
+.lose {
+  color: red;
+}
+.won {
+  color: green;
 }
 </style>

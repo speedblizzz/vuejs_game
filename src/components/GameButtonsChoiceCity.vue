@@ -8,14 +8,14 @@
     </a>
   </li>
 </ul>
-<button @click="getCities({resetResult:true})" v-if="isCityChoosed" class="next-city_btn">Next cities</button>
+<button @click="refreshCitiesForGame()" v-if="isCityChoosed" class="next-city_btn">Next cities</button>
 </div>
 
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'Cities',
+  name: 'GameButtonsChoiceCity',
   computed: mapState({
     cities: state => state.cities.currentCities,
     isCityChoosed: state => state.cities.isCityChoosed,
@@ -24,13 +24,13 @@ export default {
   methods: {
     ...mapActions('cities', [
       'checkTemperature',
-      'getCities'
+      'refreshCitiesForGame'
     ])
 
   }
 }
 </script>
-<style>
+<style scoped>
 .city_buttons {
   display: flex;
   flex-flow: row nowrap;

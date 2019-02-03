@@ -4,21 +4,21 @@
     <router-link to="/settings">Settings</router-link>
     <h1>{{title}}</h1>
     <div v-if="isGameStarted">
-      <Result/>
-      <Cities/>
+      <GameResultBlock/>
+      <GameButtonsChoiceCity/>
     </div>
     <button class="start_btn" v-if="!isGameStarted" @click="startGame"> Start game</button>
   </div>
 </template>
 
 <script>
-import Result from './Result.vue'
-import Cities from './Cities.vue'
+import GameResultBlock from './GameResultBlock'
+import GameButtonsChoiceCity from './GameButtonsChoiceCity.vue'
 export default {
   name: 'Game',
   components: {
-    Result,
-    Cities
+    GameResultBlock,
+    GameButtonsChoiceCity
   },
   computed: {
     isGameStarted () {
